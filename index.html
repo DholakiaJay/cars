@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Select cars</title>
+    <style>
+      *
+      {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .box {
+        justify-content: center;
+        display: flex;
+        margin: 50px auto;
+        height: 460px;
+        width: 550px;
+        background-color: white;
+      }
+      .white {
+        height: 350px;
+        width: 460px;
+        top: 15%;
+        background-color: white;
+        position: absolute;
+        background-image: url("https://imgd.aeplcdn.com/370x208/n/xgtp60b_1637725.jpg?q=80");
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: contain;
+        background-size: contain;
+        opacity: 0;
+      }
+      .yellowgreen {
+        height: 350px;
+        width: 460px;
+        top: 15%;
+        background-color: white;
+        position: absolute;
+        background-image: url("https://imgd.aeplcdn.com/370x208/n/ga7p60b_1637715.jpg?q=80");
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: contain;
+        background-size: contain;
+        opacity: 0;
+      }
+      .red {
+        height: 350px;
+        width: 460px;
+        top: 15%;
+        background-color: white;
+        position: absolute;
+        background-image: url("https://imgd.aeplcdn.com/370x208/n/t3np60b_1637717.jpg?q=80");
+        background-repeat: no-repeat;
+        background-size: contain;
+        object-fit: contain;
+        background-position: center;
+        opacity: 0;
+      }
+      .grey {
+        height: 350px;
+        width: 460px;
+        top: 15%;
+        background-color: white;
+        position: absolute;
+        background-image: url("https://imgd.aeplcdn.com/370x208/n/3k5p60b_1637723.jpg?q=80");
+        background-repeat: no-repeat;
+        background-size: contain;
+        object-fit: contain;
+        background-position: center;
+        opacity: 0;
+      }
+      .sizzlingred {
+        height: 350px;
+        width: 460px;
+        top: 15%;
+        background-color: white;
+        position: absolute;
+        background-image: url("https://imgd.aeplcdn.com/370x208/n/rdqp60b_1637721.jpg?q=80");
+        background-repeat: no-repeat;
+        background-size: contain;
+        object-fit: contain;
+        background-position: center;
+        opacity: 0;
+      }
+
+      .black {
+        background-image: url("https://imgd.aeplcdn.com/370x208/n/qkkp60b_1637713.jpg?q=80");
+        height: 350px;
+        width: 460px;
+        top: 15%;
+        background-color: white;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+        object-fit: contain;
+        background-position: center;
+        opacity: 0;
+      }
+
+      .nexablue {
+        background-image: url("https://imgd.aeplcdn.com/370x208/n/yy6p60b_1637719.jpg?q=80");
+        height: 350px;
+        width: 460px;
+        top: 15%;
+        background-color: white;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+        object-fit: contain;
+        background-position: center;
+        opacity: 0;
+      }
+
+      #wcolor:checked + div.white{
+        opacity: 1;
+        border-radius: 48% 52% 51% 49% / 100% 100% 0% 0%;
+        box-shadow: silver 2px 10px 30px -90px inset,
+          silver 2px 98px 96px -90px inset;
+      }
+      #ygcolor:checked + div.yellowgreen {
+        opacity: 1;
+        border-radius: 48% 52% 51% 49% / 100% 100% 0% 0%;
+        box-shadow: yellowgreen 2px 10px 30px -90px inset,
+          yellowgreen 2px 98px 96px -90px inset;
+      }
+      #rcolor:checked + div.red {
+        opacity: 1;
+        border-radius: 48% 52% 51% 49% / 100% 100% 0% 0%;
+        box-shadow: rgba(199, 57, 57, 0.666) 2px 10px 30px -90px inset,
+          rgba(199, 57, 57, 0.666) 2px 98px 96px -90px inset;
+      }
+      #gcolor:checked + div.grey {
+        opacity: 1;
+        border-radius: 48% 52% 51% 49% / 100% 100% 0% 0%;
+        box-shadow: grey 2px 10px 30px -90px inset,
+          grey 2px 98px 96px -90px inset;
+      }
+      #srcolor:checked + div.sizzlingred {
+        opacity: 1;
+        border-radius: 48% 52% 51% 49% / 100% 100% 0% 0%;
+        box-shadow: rgb(99, 8, 8) 2px 10px 30px -90px inset,
+          rgb(99, 8, 8) 2px 98px 96px -90px inset;
+      }
+      #blcolor:checked + div.black {
+        opacity: 1;
+        border-radius: 48% 52% 51% 49% / 100% 100% 0% 0%;
+        box-shadow: black 2px 10px 30px -90px inset,
+          black 2px 98px 96px -90px inset;
+      }
+      #nbcolor:checked + div.nexablue {
+        opacity: 1;
+        border-radius: 48% 52% 51% 49% / 100% 100% 0% 0%;
+        box-shadow: rgb(28, 13, 121) 2px 10px 30px -90px inset,
+          rgb(28, 13, 121) 2px 98px 96px -90px inset;
+      }
+      .cname {
+        position: relative;
+        display: inline-flex;
+        padding: 10px;
+      }
+      input {
+        display: none;
+      }
+      .cname:hover {
+        transform: scale(1.2);
+        transition-duration: 0.5s;
+        transition: all 360ms;
+        /* text-shadow: 3px 9px 12px rgba(34, 32, 32, 0.473); */
+      }
+      .bg {
+        width: fit-content;
+        border-radius: 50px;
+        background-image: linear-gradient(to left, #ffffff6c, #00000043);
+        border: 3px solid silver;
+      }
+      .bg1 {
+        font-size: x-large;
+        color: transparent;
+        width: fit-content;
+        font-weight: 900;
+        background-image: linear-gradient(to right, #8360c3, #2ebf91);
+        background-clip: text;
+      }
+      .bgl {
+        font-size: x-large;
+        width: fit-content;
+        border-radius: 50px;
+        background-image: linear-gradient(to left, #ffffff6c, #00000043);
+        padding: 10px;
+        word-spacing: 55px;
+        border: 3px solid silver;
+        
+        
+      }
+
+      .wlight {
+        opacity: 0;
+
+      }
+
+      .l-lightw {
+        position: absolute;
+        left: 45.5%;
+        top: 39%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20px;
+        width: 20px;
+        background-color: transparent;
+        border: 3px solid whitesmoke;
+        border-radius: 50px;
+        box-shadow: rgba(247, 247, 246, 0.81) 0px 20px 20px 20px inset,
+          rgba(255, 255, 255, 0.671) 0px 0px 12px 12px;
+      }
+
+      .r-lightw {
+        position: absolute;
+        left: 68.5%;
+        top: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 17px;
+        width: 17px;
+        background-color: transparent;
+        border: 3px solid whitesmoke;
+        border-radius: 50px;
+        box-shadow: rgba(247, 247, 246, 0.81) 0px 20px 20px 20px inset,
+          rgba(255, 255, 255, 0.671) 0px 0px 12px 12px;
+      }
+
+      #wlight:checked + .wlight  {
+        opacity: 1;
+      }
+
+      .ylight {
+        opacity: 0;
+      }
+
+      .l-lighty {
+        position: absolute;
+        left: 45.5%;
+        top: 39%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20px;
+        width: 20px;
+        background-color: transparent;
+        border: 3px solid whitesmoke;
+        border-radius: 50px;
+        box-shadow: rgba(247, 247, 246, 0.81) 0px 20px 20px 20px inset,
+          rgba(241, 230, 16, 0.747) 0px 0px 12px 12px;
+      }
+      .r-lighty {
+        position: absolute;
+        left: 68.5%;
+        top: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 17px;
+        width: 17px;
+        background-color: transparent;
+        border: 3px solid whitesmoke;
+        border-radius: 50px;
+        box-shadow: rgba(247, 247, 246, 0.81) 0px 20px 20px 20px inset,
+          rgba(241, 230, 16, 0.747) 0px 0px 12px 12px;
+      }
+
+      #ylight:checked + .ylight {
+        opacity: 1;
+      }
+
+      .rlight {
+        opacity: 0;
+      }
+
+      .l-lightr {
+        position: absolute;
+        left: 45.5%;
+        top: 39%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20px;
+        width: 20px;
+        background-color: transparent;
+        border: 3px solid whitesmoke;
+        border-radius: 50px;
+        box-shadow: rgba(247, 247, 246, 0.81) 0px 20px 20px 20px inset,
+          rgba(126, 156, 231, 0.601) 0px 0px 12px 12px;
+      }
+      .r-lightr {
+        position: absolute;
+        left: 68.5%;
+        top: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 17px;
+        width: 17px;
+        background-color: transparent;
+        border: 3px solid whitesmoke;
+        border-radius: 50px;
+        box-shadow: rgba(247, 247, 246, 0.81) 0px 20px 20px 20px inset,
+          rgba(126, 156, 231, 0.601) 0px 0px 12px 12px;
+      }
+
+      #rlight:checked + .rlight {
+        opacity: 1;
+      }
+
+      .glight {
+        opacity: 0;
+      }
+
+      .l-lightg {
+        position: absolute;
+        left: 45.5%;
+        top: 39%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20px;
+        width: 20px;
+        background-color: transparent;
+        border: 3px solid whitesmoke;
+        border-radius: 50px;
+        box-shadow: rgba(247, 247, 246, 0.81) 0px 20px 20px 20px inset,
+          hsla(90, 79%, 66%, 0.721) 0px 0px 12px 12px;
+      }
+      .r-lightg {
+        position: absolute;
+        left: 68.5%;
+        top: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 17px;
+        width: 17px;
+        background-color: transparent;
+        border: 3px solid whitesmoke;
+        border-radius: 50px;
+        box-shadow: rgba(247, 247, 246, 0.81) 0px 20px 20px 20px inset,
+          hsla(90, 79%, 66%, 0.721) 0px 0px 12px 12px;
+      }
+
+      #glight:checked + .glight {
+        opacity: 1;
+      }
+
+      .srlight {
+        opacity: 0;
+      }
+
+      .l-lightsr {
+        position: absolute;
+        left: 45.5%;
+        top: 39%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20px;
+        width: 20px;
+        background-color: transparent;
+        border: 3px solid whitesmoke;
+        border-radius: 50px;
+        box-shadow: rgba(247, 247, 246, 0.81) 0px 20px 20px 20px inset,
+          rgba(244, 97, 97, 0.805) 0px 0px 12px 12px;
+      }
+      .r-lightsr {
+        position: absolute;
+        left: 68.5%;
+        top: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 17px;
+        width: 17px;
+        background-color: transparent;
+        border: 3px solid whitesmoke;
+        border-radius: 50px;
+        box-shadow: rgba(247, 247, 246, 0.81) 0px 20px 20px 20px inset,
+          rgba(244, 97, 97, 0.805) 0px 0px 12px 12px;
+      }
+
+      #srlight:checked + .srlight {
+        opacity: 1;
+      }
+
+      .blight {
+        opacity: 0;
+      }
+
+      .l-lightb {
+        position: absolute;
+        left: 45.5%;
+        top: 39%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20px;
+        width: 20px;
+        background-color: transparent;
+        border: 3px solid whitesmoke;
+        border-radius: 50px;
+        box-shadow: rgba(247, 247, 246, 0.81) 0px 20px 20px 20px inset,
+          rgba(237, 200, 15, 0.533) 0px 0px 12px 12px;
+      }
+      .r-lightb {
+        position: absolute;
+        left: 68.5%;
+        top: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 17px;
+        width: 17px;
+        background-color: transparent;
+        border: 3px solid whitesmoke;
+        border-radius: 50px;
+        box-shadow: rgba(247, 247, 246, 0.81) 0px 20px 20px 20px inset,
+          rgba(237, 200, 15, 0.533) 0px 0px 12px 12px;
+      }
+
+      #blight:checked + .blight {
+        opacity: 1;
+      }
+
+      .nblight {
+        opacity: 0;
+      }
+
+      .l-lightnb {
+        position: absolute;
+        left: 45.5%;
+        top: 39%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20px;
+        width: 20px;
+        background-color: transparent;
+        border: 3px solid whitesmoke;
+        border-radius: 50px;
+        box-shadow: rgba(247, 247, 246, 0.81) 0px 20px 20px 20px inset,
+          rgba(93, 161, 230, 0.648) 0px 0px 12px 12px;
+      }
+      .r-lightnb {
+        position: absolute;
+        left: 68.5%;
+        top: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 17px;
+        width: 17px;
+        background-color: transparent;
+        border: 3px solid whitesmoke;
+        border-radius: 50px;
+        box-shadow: rgba(247, 247, 246, 0.81) 0px 20px 20px 20px inset,
+          rgba(93, 161, 230, 0.648) 0px 0px 12px 12px;
+      }
+
+      #nblight:checked + .nblight {
+        opacity: 1;
+      }
+
+      .loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+        border-top: 3px solid black;
+        border-bottom: 3px solid whitesmoke;
+      }
+
+      .loader:hover {
+        animation: rotate 2s infinite linear;
+      }
+
+      @keyframes rotate {
+        0% {
+          rotate: 0deg;
+        }
+        100% {
+          rotate: 360deg;
+        }
+      }
+
+      
+    </style>
+  </head>
+
+  <body>
+    <p style="color: red; text-align: right">&copy; dholakiajay3691</p>
+    <div class="box">
+      <input type="radio" id="wcolor" name="car" />
+      <div class="white">
+        <input type="checkbox" id="wlight" />
+        <div class="wlight">
+          <div class="l-lightw"></div>
+          <div class="r-lightw"></div>
+        </div>
+      </div>
+
+      <input type="radio" id="ygcolor" name="car" />
+      <div class="yellowgreen">
+        <input type="checkbox" id="ylight" />
+        <div class="ylight">
+          <div class="l-lighty"></div>
+          <div class="r-lighty"></div>
+        </div>
+      </div>
+
+      <input type="radio" id="rcolor" name="car" />
+      <div class="red">
+        <input type="checkbox" id="rlight" />
+        <div class="rlight">
+          <div class="l-lightr"></div>
+          <div class="r-lightr"></div>
+        </div>
+      </div>
+
+      <input type="radio" id="gcolor" name="car" />
+      <div class="grey">
+        <input type="checkbox" id="glight" />
+        <div class="glight">
+          <div class="l-lightg"></div>
+          <div class="r-lightg"></div>
+        </div>
+      </div>
+
+      <input type="radio" id="srcolor" name="car" />
+      <div class="sizzlingred">
+        <input type="checkbox" id="srlight" />
+        <div class="srlight">
+          <div class="l-lightsr"></div>
+          <div class="r-lightsr"></div>
+        </div>
+      </div>
+
+      <input type="radio" id="blcolor" name="car" />
+      <div class="black">
+        <input type="checkbox" id="blight" />
+        <div class="blight">
+          <div class="l-lightb"></div>
+          <div class="r-lightb"></div>
+        </div>
+      </div>
+
+      <input type="radio" id="nbcolor" name="car" />
+      <div class="nexablue">
+        <input type="checkbox" id="nblight" />
+        <div class="nblight">
+          <div class="l-lightnb"></div>
+          <div class="r-lightnb"></div>
+        </div>
+      </div>
+    </div>
+
+    <center>
+      <p class="bg1">Select Car Color</p>
+      <br>
+      <div class="bg">
+        <label for="wcolor" class="cname"
+          ><i
+            class="fa-solid fa-circle loader"
+            style="color: whitesmoke; font-size: xx-large"
+          ></i
+        ></label>
+        <label for="ygcolor" class="cname"
+          ><i
+            class="fa-solid fa-circle loader"
+            style="color: yellowgreen; font-size: xx-large"
+          ></i
+        ></label>
+        <label for="rcolor" class="cname"
+          ><i
+            class="fa-solid fa-circle loader"
+            style="color: red; font-size: xx-large"
+          ></i
+        ></label>
+        <label for="gcolor" class="cname"
+          ><i
+            class="fa-solid fa-circle loader"
+            style="color: rgb(63, 63, 63); font-size: xx-large"
+          ></i
+        ></label>
+        <label for="srcolor" class="cname"
+          ><i
+            class="fa-solid fa-circle loader"
+            style="color: rgb(99, 8, 8); font-size: xx-large"
+          ></i
+        ></label>
+        <label for="blcolor" class="cname"
+          ><i
+            class="fa-solid fa-circle loader"
+            style="color: black; font-size: xx-large"
+          ></i
+        ></label>
+        <label for="nbcolor" class="cname"
+          ><i
+            class="fa-solid fa-circle loader"
+            style="color: rgb(28, 13, 121); font-size: xx-large"
+          ></i
+        ></label>
+      </div>
+      <br>
+      <p class="bg1">Select Their light</p>
+      <br>
+      <div class="bgl">
+        <label for="wlight">
+          <i class="fa-solid fa-lightbulb" style="color: whitesmoke"></i>
+        </label>
+        <label for="ylight">
+          <i class="fa-solid fa-lightbulb" style="color: yellow"></i>
+        </label>
+        <label for="rlight">
+          <i class="fa-solid fa-lightbulb" style="color: #8360c3"></i>
+        </label>
+        <label for="glight">
+          <i class="fa-solid fa-lightbulb" style="color: green"></i>
+        </label>
+        <label for="srlight">
+          <i class="fa-solid fa-lightbulb" style="color: palevioletred"></i>
+        </label>
+        <label for="blight">
+          <i class="fa-solid fa-lightbulb" style="color: yellow"></i>
+        </label>
+        <label for="nblight">
+          <i class="fa-solid fa-lightbulb" style="color: blue"></i>
+        </label>
+      </div>
+     <br>
+    </center>
+   
+  </body>
+</html>
