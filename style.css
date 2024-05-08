@@ -735,15 +735,15 @@ input {
 .hlight {
   position:fixed;
   top: 6%;
-  left:46%;
+  left: 46.5%;
   height: 100px;
   width: 100px;
-  background-color: transparent;
+  background-color:transparent;
   background-image: url("https://i.giphy.com/kSy7fXUq3uu7CEPx17.webp");
   background-repeat: no-repeat;
-  background-size: 100px 100px;
+  background-size: 95px 95px;
   background-position: center;
   z-index: 1;
-  filter: drop-shadow(8px 8px 2px rgba(11, 0, 0, 0.718));
+  filter: drop-shadow(0px 9px 3px rgba(11, 0, 0, 0.718));  
   overflow: hidden;
 }
