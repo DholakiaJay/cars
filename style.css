@@ -733,7 +733,7 @@ input {
 }
 
 .hlight {
-  position: absolute;
+  position:fixed;
   top: 6%;
   left: 44.5%;
   height: 100px;
