@@ -44,8 +44,8 @@
 .cname:hover {
   transition-duration: 1s;
   transition: all 360ms;
-
-  text-shadow: 3px 9px 12px rgba(34, 32, 32, 0.314);
+  border-top: 3px solid yellowgreen;
+  text-shadow: 3px 9px 12px rgba(240, 244, 7, 0.719);
 }
 
 .light {
@@ -104,6 +104,8 @@
   height: 600px;
   width: 450px;
 }
+
+
 .box {
   border-radius: 49% 51% 48% 52% / 100% 100% 0% 0%;
   justify-content: center;
@@ -111,11 +113,11 @@
   margin: 50px auto;
   height: 460px;
   width: 550px;
+  background-size: 250px 250px;
   background-color: white;
-  background-image: url("");
   background-repeat: no-repeat;
   background-position: center;
-
+  background-image: url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzNqZ2hlNGtzczFhNmRwNGh2MmlzcHQ2OHFkMmtqZ2Z0a2lmcnR2MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/iFrppsZJHfAfp9YMM5/giphy.gif");
   position: absolute;
   top: 0%;
   left: 30%;
@@ -235,33 +237,24 @@
   background-position: center;
   opacity: 0;
 }
-.material-symbols-outlined
-{
-    border-top: 3px solid silver;
-    border-radius: 50px;
-    color:grey;
+.material-symbols-outlined {
+  border-top: 3px solid silver;
+  border-radius: 50px;
+  color: grey;
 }
-.material-symbols-outlined:hover
-{
-    color:aqua;
-    border-bottom: 3px solid silver;
-    border-top: 0px solid silver;
-    border-radius: 50px;
- 
+.material-symbols-outlined:hover {
+  color: aqua;
+  border-bottom: 3px solid silver;
+  border-top: 0px solid silver;
+  border-radius: 50px;
 }
 
-
-
-#open:checked + .open{
+#open:checked + .open {
   opacity: 1;
-
-
 }
 
 #close:checked + div.close {
   opacity: 0;
-
-
 }
 
 #wcolor:checked + div.white {
@@ -671,31 +664,31 @@ input {
 
 .blub:hover {
   border-radius: 50px;
-  border-top: 3px solid grey;
+  border-top: 5px solid grey;
   color: whitesmoke;
 }
 .blub:not(:hover) {
-  border-top: 3px solid whitesmoke;
+  border-top: 5px solid whitesmoke;
   border-radius: 50px;
 }
 
 .bluby:hover {
   border-radius: 50px;
-  border-top: 3px solid grey;
+  border-top: 5px solid grey;
   color: yellow;
 }
 .bluby:not(:hover) {
-  border-top: 3px solid yellowgreen;
+  border-top: 5px solid yellowgreen;
   border-radius: 50px;
 }
 
 .blubr:hover {
   border-radius: 50px;
-  border-top: 3px solid grey;
-  color: blue;
+  border-top: 5px solid grey;
+  color: rgb(7, 120, 241);
 }
 .blubr:not(:hover) {
-  border-top: 3px solid blue;
+  border-top: 5px solid blue;
   border-radius: 50px;
 }
 
@@ -705,7 +698,7 @@ input {
   color: lightgreen;
 }
 .blubg:not(:hover) {
-  border-top: 3px solid lightgreen;
+  border-top: 5px solid lightgreen;
   border-radius: 50px;
 }
 
@@ -715,7 +708,7 @@ input {
   color: tomato;
 }
 .blubsr:not(:hover) {
-  border-top: 3px solid tomato;
+  border-top: 5px solid tomato;
   border-radius: 50px;
 }
 
@@ -725,17 +718,17 @@ input {
   color: yellow;
 }
 .blubb:not(:hover) {
-  border-top: 3px solid yellow;
+  border-top: 5px solid yellow;
   border-radius: 50px;
 }
 
 .blubnb:hover {
   border-radius: 50px;
-  border-top: 3px solid grey;
+  border-top: 5px solid grey;
   color: aqua;
 }
 .blubnb:not(:hover) {
-  border-top: 3px solid aqua;
+  border-top: 5px solid aqua;
   border-radius: 50px;
 }
 
@@ -751,4 +744,6 @@ input {
   background-size: 100px 100px;
   background-position: center;
   z-index: 1;
+  filter: drop-shadow(8px 8px 2px rgba(11, 0, 0, 0.718));
+  overflow: hidden;
 }
